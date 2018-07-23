@@ -1,0 +1,23 @@
+{
+  "name": "pizza-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarijaStojanovic/pizza-api.git"
+  },
+  "author": "Marija Stojanovic <marijastojanovic14@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarijaStojanovic/pizza-api/issues"
+  },
+  "homepage": "https://github.com/MarijaStojanovic/pizza-api#readme",
+  "dependencies": {
+    "aws-sdk": "^2.279.1",
+    "claudia-api-builder": "^4.1.1"
+  }
+}
