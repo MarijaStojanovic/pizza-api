@@ -1,13 +1,19 @@
-const pizzas = require('../data/pizzas.json');
+const pizzas = require('../data');
+const AWS = require('aws-sdk');
+const docClient = new AWS.DynamoDB.DocumentClient();
 
 module.export.getPizzas = (id) => {
-  if (!id) {
-    return pizzas;
+  if (typeof orderId === 'undefined') {
+    return docClient.scan({
+      TableName: 'pizza-orders'
+    }).promise()
+    .then(result => result.Items);
   }
-  const pizza = pizzas.find(pizza => pizza.id == id);
-
-  if (pizza) {
-    return pizza;
-  }
-  throw new Error('The pizza you requested was not found');
+  return docClient.get({
+    TableName: 'pizza-orders',
+    Key: {
+      orderId: orderId
+    }
+  }).promise()
+  .then(result => result.Item);
 };
